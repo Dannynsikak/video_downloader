@@ -15,6 +15,10 @@ def download_video(url, output_path="downloads/"):
             'key': 'FFmpegVideoConvertor',  # Optional: convert to another format
             'preferedformat': 'mp4',  # Convert to mp4 format
         }],
+        'force_generic_extractor': True,  # Force generic extraction
+        'cookiefile': 'cookies.txt',  # Path to cookies file
+        'verbose': True,
+        'continuedl': True,  # Continue downloading if the download is interrupted
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
